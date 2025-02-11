@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.bg {
+  @apply bg-gray-200 font-sans;
+}
+
+/* form */
+
+.heading {
+  @apply text-3xl p-2 font-bold;
+}
+
+.Rounded_Title {
+  @apply p-2 w-full bg-blue-200 rounded-lg font-bold;
+}
+
+.box {
+  @apply container rounded-lg bg-white mx-auto p-2;
+}
+.input {
+  @apply w-full px-5 rounded bg-white border border-gray-300 p-1;
+}
+.label {
+  @apply font-semibold text-sm w-[9pc];
+}
+
+/* Employee list */
+.thead {
+  @apply bg-gray-100 font-semibold;
+}
+
+.td {
+  @apply p-2;
+}
+
+.unsafe_badge {
+  @apply w-fit rounded-lg mx-auto mt-2 flex p-1 items-center justify-center cursor-pointer bg-red-500  text-white text-xs font-semibold;
+}
+.safe_badge {
+  @apply w-fit rounded-lg mx-auto mt-2 flex p-1 items-center justify-center cursor-pointer bg-green-500  text-white text-xs font-semibold;
+}
+.view_badge {
+  @apply w-fit rounded-lg p-1 items-center justify-center bg-purple-200  cursor-pointer text-purple-600 text-xl;
+}
+.edit_badge {
+  @apply w-fit rounded-lg p-1 items-center justify-center bg-blue-200  cursor-pointer text-blue-600 text-xl;
+}
+.del_badge {
+  @apply w-fit rounded-lg p-1 items-center justify-center bg-red-200  cursor-pointer text-red-600 text-xl;
+}
+
+.btn_green {
+  @apply w-fit mt-6 py-2 px-3 font-semibold bg-green-400 rounded-lg cursor-pointer
+  hover:bg-green-500 hover:scale-105 transition-all;
+}
+.btn_blue {
+  @apply w-fit mt-6 py-2 px-3 font-semibold text-white bg-blue-400 rounded-lg cursor-pointer
+  hover:bg-blue-500 hover:scale-105 transition-all;
+}
+.btn_gray {
+  @apply w-fit mt-6 py-2 px-3 font-semibold bg-gray-200 rounded-lg cursor-pointer
+  hover:bg-gray-300 hover:scale-105 transition-all;
+}
+.btn_active {
+  @apply border-b-2 border-r-2;
+}
+
+/* nav */
+.nav_list_p {
+  @apply rounded-l-full ml-5 pl-[3pc] p-1 hover:bg-gray-100;
+}
