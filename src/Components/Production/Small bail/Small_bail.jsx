@@ -30,7 +30,7 @@ const Small_bail = () => {
             <Form sendDataToParent={handleChildData} />
           </div>
 
-          <div className="btn md:w-[90%] mx-auto flex gap-3 mb-5">
+          <div className="btn md:w-[90%] mx-auto flex flex-wrap gap-3 gap-y-0 mb-5">
             <div className="btn_blue text-white" onClick={handleSaveToServer}>
               Gen
             </div>

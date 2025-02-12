@@ -14,7 +14,7 @@ import Inventory from "./Components/Inventory/home";
 import Employee_list from "./Components/Employee_list";
 import Form from "./Components/Form";
 
-import Employee_form from "./Components/Employee/Employee form/Employee_form";
+import Employee_form from "./Components/HR/Employee form/Employee_form";
 
 import Add_employee from "./Components/Employee/Add new employee/Add_employee";
 

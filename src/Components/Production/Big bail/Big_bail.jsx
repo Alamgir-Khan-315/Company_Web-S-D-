@@ -36,8 +36,8 @@ const Big_bail = () => {
             </div>
           </div>
 
-          <div className="weight flex w-[50%] mx-auto items-center gap-5 p-2">
-            <h2 className="label !w-[9pc]">Input Barcode :</h2>
+          <div className="weight flex mx-auto items-center gap-5 p-2">
+            <h2 className="label">Input Barcode :</h2>
             <input className="input" type="number" name="barcode" />
           </div>
         </div>
