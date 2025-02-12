@@ -311,15 +311,20 @@ const App = () => {
     <div className="bg body">
       <Router>
         <div className="home flex">
-          <div className="Nav-body h-[100vh] overflow-y-auto">
+          <div className="Nav-body h-[100vh] overflow-y-auto relative">
+            {/*  */}
             <div
               className={`nav font-semibold fixed top-0 left-0 h-[91vh] overflow-y-auto scrollbar-hide shadow-md
                      ${
-                       NavToggle === true ? "w-[116px]" : "w-[13.5pc]"
+                       NavToggle === true
+                         ? "w-[116px]"
+                         : " md:flex md:flex-col sm:w-[50px] md:w-[13.5pc]"
                      } transition-all duration-500`}
             >
               <div className="nav-top flex items-center justify-between w-full p-4">
-                <div className="logo">Logo</div>
+                <div className={`${NavToggle === false && "hidden md:flex"}`}>
+                  Logo
+                </div>
                 <div className="icon" onClick={() => setNavToggle(!NavToggle)}>
                   {NavToggle === true ? (
                     <GoSidebarCollapse className="text-xl" />
@@ -329,7 +334,11 @@ const App = () => {
                 </div>
               </div>
 
-              <div className="nav-item w-full flex flex-col text-sm gap-3">
+              <div
+                className={`nav-item w-full flex flex-col text-sm gap-3 ${
+                  NavToggle === false && "hidden md:flex"
+                } transition-all duration-300`}
+              >
                 {NavMenu.map((d, i) => (
                   <div key={i}>
                     <Link to={d.Link}>
@@ -405,10 +414,22 @@ const App = () => {
               } bottom-2 text-center flex items-center ml-3 shadow-lg justify-center gap-3 hover:bg-gray-100`}
               onClick={() => alert("User Logged out")}
             >
-              <div className="">
-                <RiLogoutBoxFill className="text-xl" />
+              <div
+                className={` ${
+                  NavToggle === true ? "flex" : "hidden md:flex"
+                } `}
+              >
+                <RiLogoutBoxFill
+                  className={` ${
+                    NavToggle === true ? "hidden md:flex" : "flex"
+                  } `}
+                />
               </div>
-              <div className={` ${NavToggle === true ? "hidden" : "flex"} `}>
+              <div
+                className={` ${
+                  NavToggle === true ? "flex md:hidden" : "hidden md:flex"
+                } `}
+              >
                 Log out
               </div>
             </div>
@@ -417,7 +438,7 @@ const App = () => {
           {/* ------------------------------------------------------------------------------- */}
           <div
             className={`routes px-4 w-full  ${
-              NavToggle === true ? "ml-[100px]" : "ml-[13pc]"
+              NavToggle === true ? "ml-[100px]" : "md:ml-[13pc]"
             } transition-all duration-500`}
           >
             <Routes>

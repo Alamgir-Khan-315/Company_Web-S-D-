@@ -32,7 +32,7 @@ export default function Employee_form() {
         <h2 className="Rounded_Title">Entitlement</h2>
         <Entitlement sendDataToParent={handleChildData} />
 
-        <div className="btn flex gap-3 mb-5">
+        <div className="btn md:w-[90%] mx-auto flex gap-3 mb-5">
           <div className="btn_blue text-white" onClick={handleSaveToServer}>
             New
           </div>

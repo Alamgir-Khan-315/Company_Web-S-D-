@@ -224,8 +224,8 @@ export default function Form() {
             </div>
           </div>
 
-          <div className="btn_green ml-20" type="Submit">
-            Submit
+          <div className="md:w-[90%] mx-auto -mt-4 mb-3" type="Submit">
+            <div className="btn_blue">Submit</div>
           </div>
 
           <pre className="mt-4 p-2 bg-gray-100 rounded">

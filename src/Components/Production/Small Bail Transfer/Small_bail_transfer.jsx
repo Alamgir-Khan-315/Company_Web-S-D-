@@ -28,11 +28,11 @@ const Small_bail_transfer = () => {
       <div className="box mt-[1rem] !p-[1rem]">
         <h2 className="Rounded_Title mb-4">Small Bail Transfer</h2>
 
-        <h2 className="ml-[80%] font-semibold">Date : {DateNow}</h2>
+        <h2 className="md:ml-[80%] font-semibold">Date : {DateNow}</h2>
 
         <Form sendDataToParent={handleChildData} />
 
-        <div className="btn flex items-center gap-5">
+        <div className="btn md:w-[90%] mx-auto flex items-center gap-5 -mt-3">
           <div className="btn_blue">Order Transfer</div>
           <div className="btn_blue">Delete</div>
           <div className="btn_blue">Item Transfer</div>
