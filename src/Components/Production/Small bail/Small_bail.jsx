@@ -31,7 +31,7 @@ const Small_bail = () => {
           </div>
 
           <div className="btn md:w-[90%] mx-auto flex flex-wrap gap-3 gap-y-0 mb-5">
-            <div className="btn_blue text-white" onClick={handleSaveToServer}>
+            <div className="btn_blue" onClick={handleSaveToServer}>
               Gen
             </div>
             <div className={`btn_blue`}>Sogo</div>

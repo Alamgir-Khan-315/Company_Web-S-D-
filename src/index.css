@@ -63,6 +63,10 @@
   @apply w-fit mt-6 py-2 px-3 font-semibold bg-gray-200 rounded-lg cursor-pointer
   hover:bg-gray-300 hover:scale-105 transition-all;
 }
+.btn_red {
+  @apply w-fit py-1 px-3 font-semibold bg-red-500 text-white rounded-lg cursor-pointer
+  hover:bg-red-600 hover:scale-105 transition-all;
+}
 .btn_active {
   @apply border-b-2 border-r-2;
 }

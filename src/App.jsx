@@ -11,6 +11,10 @@ import Import from "./Components/Import/home";
 import Import_form from "./Components/Import/Form/Form";
 
 import Inventory from "./Components/Inventory/home";
+import Inventory_GRN_form from "./Components/Inventory/GRN Form/home";
+import Inventory_Insurance_form from "./Components/Inventory/Insurance Form/home";
+import Inventory_Dc_form from "./Components/Inventory/DC Form/home";
+
 import Employee_list from "./Components/Employee_list";
 import Form from "./Components/Form";
 
@@ -207,7 +211,7 @@ const App = () => {
           Title: "GRN Form",
           Icon: FaAddressCard,
           Name: "grn_form",
-          Link: "Grn_form",
+          Link: "/Inventory/GRN_form",
         },
         {
           Title: "GRN Report",
@@ -225,7 +229,7 @@ const App = () => {
           Title: "Insurance Form",
           Icon: FaMoneyBillAlt,
           Name: "insurance_form",
-          Link: "Insurance_form",
+          Link: "/Inventory/Insurance_form",
         },
         {
           Title: "Insurance Report",
@@ -237,7 +241,7 @@ const App = () => {
           Title: "DC Form",
           Icon: HiDocumentReport,
           Name: "dc_form",
-          Link: "Dc_form",
+          Link: "/Inventory/Dc_form",
         },
         {
           Title: "GatePass List",
@@ -457,6 +461,18 @@ const App = () => {
               <Route path="/Import/form" element={<Import_form />} />
 
               <Route path="/Inventory" element={<Inventory />} />
+              <Route
+                path="/Inventory/GRN_form"
+                element={<Inventory_GRN_form />}
+              />
+              <Route
+                path="/Inventory/Insurance_form"
+                element={<Inventory_Insurance_form />}
+              />
+              <Route
+                path="/Inventory/Dc_form"
+                element={<Inventory_Dc_form />}
+              />
 
               <Route path="/Form" element={<Form />} />
               <Route path="/Employee_form" element={<Employee_form />} />
