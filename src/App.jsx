@@ -2,6 +2,10 @@ import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 import Hr from "./Components/HR/home";
+import Attendence_form from "./Components/HR/Attendance Form/home";
+
+import Generate_salary from "./Components/HR/Generate salary/home";
+
 import Production from "./Components/Production/home";
 import Small_bail from "./Components/Production/Small bail/Small_bail";
 import Small_bail_transfer from "./Components/Production/Small Bail Transfer/Small_bail_transfer";
@@ -112,7 +116,7 @@ const App = () => {
           Title: "Attendence Form",
           Icon: FaCalendarTimes,
           Name: "attendence_form",
-          Link: "Attendence_form",
+          Link: "/HR/Attendence_form",
         },
         {
           Title: "Time Download",
@@ -154,7 +158,7 @@ const App = () => {
           Title: "Generate Salary",
           Icon: FaMoneyBillAlt,
           Name: "generate_salary",
-          Link: "Generate_salary",
+          Link: "/Hr/Generate_salary",
         },
         {
           Title: "Report",
@@ -314,7 +318,7 @@ const App = () => {
   return (
     <div className="bg body">
       <Router>
-        <div className="home flex">
+        <div className="home w-full flex">
           <div className="Nav-body h-[100vh] overflow-y-auto relative">
             {/*  */}
             <div
@@ -457,6 +461,9 @@ const App = () => {
               <Route path="/Production/big_bail" element={<Big_bail />} />
 
               <Route path="/Hr" element={<Hr />} />
+              <Route path="/HR/Attendence_form" element={<Attendence_form />} />
+
+              <Route path="/Hr/Generate_salary" element={<Generate_salary />} />
               <Route path="/Import" element={<Import />} />
               <Route path="/Import/form" element={<Import_form />} />
 

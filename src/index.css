@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .bg {
-  @apply bg-gray-200 font-sans;
+  @apply w-full bg-gray-200 font-sans;
 }
 
 /* form */
@@ -32,7 +32,7 @@
 }
 
 .td {
-  @apply p-2;
+  @apply p-2 border text-xs;
 }
 
 .unsafe_badge {
