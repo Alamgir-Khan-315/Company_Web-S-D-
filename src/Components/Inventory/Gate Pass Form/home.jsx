@@ -22,19 +22,25 @@ const Home = () => {
           <h1 className="text hover:text-black cursor-pointer">Inventory</h1>
         </Link>
         &nbsp; / &nbsp;
-        <h1 className="text-black cursor-pointer">Insurance Form</h1>
+        <h1 className="text-black cursor-pointer">Gate Pass Form</h1>
       </div>
 
       <div className="box mt-[1rem] !p-[1rem]">
-        <h1 className="Rounded_Title">Insurance Form</h1>
+        <h1 className="Rounded_Title">Gate Pass Form</h1>
 
         <Form sendDataToParent={handleChildData} />
 
-        <div className="btn md:w-[90%] mx-auto flex flex-wrap -mt-5 gap-3 gap-y-0 mb-5">
+        <div className="btn md:w-[90%] mx-auto flex flex-wrap gap-3 -mt-5 gap-y-0 mb-5">
           <div className="btn_blue">Submit</div>
         </div>
 
         <Form2 />
+
+        {/* <div className="btn md:w-[90%] mx-auto flex flex-wrap gap-3 gap-y-0 mb-5">
+          <div className="btn_blue">Add</div>
+        </div>
+
+        <Table TableData={Data.form2Data} /> */}
       </div>
 
       <pre className="mt-4 p-2 bg-gray-100 rounded">

@@ -70,6 +70,13 @@
 .btn_active {
   @apply border-b-2 border-r-2;
 }
+.toggle_gray {
+  @apply w-fit px-3 font-semibold bg-gray-100 rounded-lg cursor-pointer
+  hover:bg-gray-200 hover:scale-105 transition-all;
+}
+.toggle_gray_selected {
+  @apply w-fit px-3 font-semibold bg-blue-300 rounded-full cursor-pointer drop-shadow-lg;
+}
 
 /* nav */
 .nav_list_p {

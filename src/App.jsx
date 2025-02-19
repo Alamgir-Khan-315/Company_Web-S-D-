@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 import Hr from "./Components/HR/home";
 import Attendence_form from "./Components/HR/Attendance Form/home";
+import Loan_form from "./Components/HR/Loan Form/home";
 
 import Generate_salary from "./Components/HR/Generate salary/home";
 
@@ -18,6 +19,7 @@ import Inventory from "./Components/Inventory/home";
 import Inventory_GRN_form from "./Components/Inventory/GRN Form/home";
 import Inventory_Insurance_form from "./Components/Inventory/Insurance Form/home";
 import Inventory_Dc_form from "./Components/Inventory/DC Form/home";
+import Gate_pass_form from "./Components/Inventory/Gate Pass Form/home";
 
 import Employee_list from "./Components/Employee_list";
 import Form from "./Components/Form";
@@ -128,7 +130,7 @@ const App = () => {
           Title: "Loan Form",
           Icon: FaAddressCard,
           Name: "loan_form",
-          Link: "Loan_form",
+          Link: "/Hr/Loan_form",
         },
         {
           Title: "Department Form",
@@ -257,7 +259,7 @@ const App = () => {
           Title: "GatePass Form",
           Icon: FaToriiGate,
           Name: "gatepass_form",
-          Link: "Gatepass_form",
+          Link: "Inventory/Gate_pass_form",
         },
         {
           Title: "GatePass Report",
@@ -462,8 +464,9 @@ const App = () => {
 
               <Route path="/Hr" element={<Hr />} />
               <Route path="/HR/Attendence_form" element={<Attendence_form />} />
-
               <Route path="/Hr/Generate_salary" element={<Generate_salary />} />
+              <Route path="/Hr/Loan_form" element={<Loan_form />} />
+
               <Route path="/Import" element={<Import />} />
               <Route path="/Import/form" element={<Import_form />} />
 
@@ -479,6 +482,10 @@ const App = () => {
               <Route
                 path="/Inventory/Dc_form"
                 element={<Inventory_Dc_form />}
+              />
+              <Route
+                path="/Inventory/Gate_pass_form"
+                element={<Gate_pass_form />}
               />
 
               <Route path="/Form" element={<Form />} />

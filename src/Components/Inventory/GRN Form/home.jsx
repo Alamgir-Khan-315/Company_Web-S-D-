@@ -30,7 +30,7 @@ const Home = () => {
 
         <Form sendDataToParent={handleChildData} />
 
-        <div className="btn md:w-[90%] mx-auto flex flex-wrap gap-3 gap-y-0 mb-5">
+        <div className="btn md:w-[90%] mx-auto flex flex-wrap gap-3 -mt-5 gap-y-0 mb-5">
           <div className="btn_blue">Submit</div>
         </div>
 
