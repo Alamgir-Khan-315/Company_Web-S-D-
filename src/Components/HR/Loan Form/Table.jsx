@@ -1,7 +1,102 @@
 import React, { useState } from "react";
+import DataTable from "react-data-table-component";
 
 const Table = () => {
   const [Filter, setFilter] = useState("list");
+
+  const [data, setData] = useState([
+    {
+      Select: "Select",
+      ID: 1,
+      Enroll_Number: 123,
+      Loan_Entitle: "Demo",
+      Granter_1: 1,
+      Granter_2: 2,
+      Loan_amount: 1212,
+      Deduction_amount: 1212,
+      Loan_deduction: 1212,
+      Admin: 1212,
+      Approved: 1212,
+    },
+    {
+      Select: "Select",
+      ID: 2,
+      Enroll_Number: 43234,
+      Loan_Entitle: "Demo",
+      Granter_1: 1,
+      Granter_2: 2,
+      Loan_amount: 1212,
+      Deduction_amount: 1212,
+      Loan_deduction: 1212,
+      Admin: 1212,
+      Approved: 1212,
+    },
+  ]);
+
+  const columns = [
+    {
+      name: "Select 1",
+      selector: (row) => row.Select,
+    },
+    {
+      name: "ID",
+      width: "70px",
+      selector: (row) => row.ID,
+    },
+    {
+      name: "Enroll #",
+      selector: (row) => row.Enroll_Number,
+    },
+    {
+      name: "Loan Entitle",
+      selector: (row) => row.Loan_Entitle,
+    },
+    {
+      name: "Granter 1",
+      selector: (row) => row.Granter_1,
+    },
+    {
+      name: "Granter 2",
+      selector: (row) => row.Granter_2,
+    },
+    {
+      name: "Loan Amount",
+      selector: (row) => row.Loan_amount,
+    },
+    {
+      name: "Deduction Amount",
+      selector: (row) => row.Deduction_amount,
+    },
+    {
+      name: "Loan Deduction",
+      selector: (row) => row.Loan_deduction,
+    },
+    {
+      name: "Admin",
+      selector: (row) => row.Admin,
+    },
+    {
+      name: "Approved",
+      selector: (row) => row.Approved,
+    },
+  ];
+
+  const customStyles = {
+    headCells: {
+      style: {
+        fontSize: "14px",
+        fontWeight: "600",
+        backgroundColor: "#f3f4f6",
+        textAlign: "left",
+        padding: "0.5rem",
+      },
+    },
+    cells: {
+      style: {
+        padding: "0.5rem",
+      },
+    },
+  };
 
   return (
     <div>
@@ -32,7 +127,14 @@ const Table = () => {
         </div>
       </div>
 
-      <table className="w-full text-sm table-auto p-2">
+      <DataTable
+        columns={columns}
+        data={data}
+        highlightOnHover
+        customStyles={customStyles}
+      />
+
+      {/* <table className="w-full text-sm table-auto p-2">
         <thead className="thead">
           <tr className="text-center border-2 border-gray-200">
             <td className="td">Select</td>
@@ -64,7 +166,7 @@ const Table = () => {
             <td className="td">Holiday</td>
           </tr>
         </tbody>
-      </table>
+      </table> */}
     </div>
   );
 };

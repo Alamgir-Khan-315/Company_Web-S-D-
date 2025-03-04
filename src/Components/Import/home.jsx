@@ -1,14 +1,14 @@
 import { Link } from "react-router-dom";
-import Form from "./Form/Form";
-import Table from "../Common Component/Table";
+// import Form from "./Form/Form";
+// import Table from "../Common Component/Table";
+import Taable from "./Table";
 
 const Home = () => {
-  // table
-  const TableData = [
-    { Title: "Title 1", Data: "Data 1" },
-    { Title: "Title 2", Data: "Data 2" },
-    { Title: "Title 3", Data: "Data 3" },
-  ];
+  // const TableData = [
+  //   { Title: "Title 1", Data: "Data 1" },
+  //   { Title: "Title 2", Data: "Data 2" },
+  //   { Title: "Title 3", Data: "Data 3" },
+  // ];
 
   return (
     <div>
@@ -38,7 +38,8 @@ const Home = () => {
             </Link>
           </div>
           <div>
-            <Table TableData={TableData} />
+            {/* <Table TableData={TableData} /> */}
+            <Taable />
           </div>
         </div>
       </div>

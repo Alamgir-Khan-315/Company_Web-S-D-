@@ -1,21 +1,21 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import DataTable from "react-data-table-component";
 
 import { IoMdAddCircle, IoMdRefresh } from "react-icons/io";
 import { GrFormView } from "react-icons/gr";
 import { CiEdit } from "react-icons/ci";
 import { MdOutlineDelete } from "react-icons/md";
-import { FaCircleArrowLeft } from "react-icons/fa6";
-import { FaCircleArrowRight } from "react-icons/fa6";
 
 const Employee_list = () => {
   const [Search_Data, setSearch_Data] = useState({
     Search_Range: "",
     Search_Name: "",
   });
-  const TableData = [
+
+  const [data, setData] = useState([
     {
-      "s.no": "1",
+      s_no: "1",
       code: "2001",
       name: "Demo",
       city: "Karachi",
@@ -24,7 +24,7 @@ const Employee_list = () => {
       status: "Active",
     },
     {
-      "s.no": "2",
+      s_no: "2",
       code: "2001",
       name: "Demo",
       city: "Karachi",
@@ -32,12 +32,177 @@ const Employee_list = () => {
       mobile: "124332312312",
       status: "Inactive",
     },
+    {
+      s_no: "2",
+      code: "2001",
+      name: "Demo",
+      city: "Karachi",
+      designation: "Software Department",
+      mobile: "124332312312",
+      status: "Inactive",
+    },
+    {
+      s_no: "2",
+      code: "2001",
+      name: "Demo",
+      city: "Karachi",
+      designation: "Software Department",
+      mobile: "124332312312",
+      status: "Inactive",
+    },
+    {
+      s_no: "2",
+      code: "2001",
+      name: "Demo",
+      city: "Karachi",
+      designation: "Software Department",
+      mobile: "124332312312",
+      status: "Inactive",
+    },
+    {
+      s_no: "2",
+      code: "2001",
+      name: "Demo",
+      city: "Karachi",
+      designation: "Software Department",
+      mobile: "124332312312",
+      status: "Inactive",
+    },
+    {
+      s_no: "2",
+      code: "2001",
+      name: "Demo",
+      city: "Karachi",
+      designation: "Software Department",
+      mobile: "124332312312",
+      status: "Inactive",
+    },
+    {
+      s_no: "2",
+      code: "2001",
+      name: "Demo",
+      city: "Karachi",
+      designation: "Software Department",
+      mobile: "124332312312",
+      status: "Inactive",
+    },
+    {
+      s_no: "2",
+      code: "2001",
+      name: "Demo",
+      city: "Karachi",
+      designation: "Software Department",
+      mobile: "124332312312",
+      status: "Inactive",
+    },
+    {
+      s_no: "2",
+      code: "2001",
+      name: "Demo",
+      city: "Karachi",
+      designation: "Software Department",
+      mobile: "124332312312",
+      status: "Inactive",
+    },
+    {
+      s_no: "2",
+      code: "2001",
+      name: "Demo",
+      city: "Karachi",
+      designation: "Software Department",
+      mobile: "124332312312",
+      status: "Inactive",
+    },
+  ]);
+
+  const columns = [
+    {
+      name: "S no",
+      width: "60px",
+      selector: (row) => row.s_no,
+    },
+    {
+      name: "Code",
+      width: "70px",
+      selector: (row) => row.code,
+    },
+    {
+      name: "Name",
+      selector: (row) => row.name,
+    },
+    {
+      name: "City",
+      width: "80px",
+      selector: (row) => row.city,
+    },
+    {
+      name: "Designation",
+      selector: (row) => row.designation,
+    },
+    {
+      name: "Mobile",
+      width: "130px",
+      selector: (row) => row.mobile,
+    },
+    {
+      name: "Status",
+      width: "80px",
+      selector: (row) => row.status,
+      cell: (row) => (
+        <span
+          className={`px-2 py-1 rounded text-white ${
+            row.status === "Active" ? "bg-green-500" : "bg-red-500"
+          }`}
+        >
+          {row.status}
+        </span>
+      ),
+    },
+    {
+      name: "Action",
+      width: "130px",
+      selector: (row) => row.action,
+      cell: (row) => (
+        <div className="action w-fit flex items-center justify-center gap-2">
+          <div
+            className="view_badge cursor-pointer"
+            onClick={() => ViewUser(row.s_no)}
+          >
+            <GrFormView />
+          </div>
+          <div
+            className="edit_badge cursor-pointer"
+            onClick={() => EditUser(row.s_no)}
+          >
+            <CiEdit />
+          </div>
+          <div
+            className="del_badge cursor-pointer"
+            onClick={() => DelUser(row.s_no)}
+          >
+            <MdOutlineDelete />
+          </div>
+        </div>
+      ),
+    },
   ];
 
-  function handleSearchQuery(e) {
-    const { name, value } = e.target;
-    setSearch_Data({ ...Search_Data, [name]: value });
-  }
+  const customStyles = {
+    headCells: {
+      style: {
+        fontSize: "1rem",
+        fontWeight: "600",
+        backgroundColor: "#f3f4f6",
+        textAlign: "left",
+        padding: "0.5rem",
+      },
+    },
+    cells: {
+      style: {
+        padding: "0.5rem",
+      },
+    },
+  };
 
   function ViewUser(id) {
     alert(`View user of ${id}`);
@@ -49,17 +214,10 @@ const Employee_list = () => {
     alert(`Del user of ${id}`);
   }
 
-  const [Pagination, setPagination] = useState("1");
-
-  const handlePrev = () => {
-    if (Pagination > 1) {
-      setPagination((Pagination) => (parseInt(Pagination) - 1).toString());
-    }
-  };
-
-  const handleNext = () => {
-    setPagination((Pagination) => (parseInt(Pagination) + 1).toString());
-  };
+  function handleSearchQuery(e) {
+    const { name, value } = e.target;
+    setSearch_Data({ ...Search_Data, [name]: value });
+  }
 
   return (
     <div className="main h-[100vh] pt-[3pc]">
@@ -88,20 +246,6 @@ const Employee_list = () => {
         </div>
 
         <div className="search-portion flex justify-between p-5 box-border">
-          <div className="search-box flex gap-3">
-            <h3>Show</h3>
-            <select
-              className="w-[50px] border rounded-lg border-gray-300 text-center text-sm"
-              name="Search_Range"
-              onChange={handleSearchQuery}
-            >
-              <option>0</option>
-              <option>10</option>
-              <option>50</option>
-            </select>
-
-            <h3>entries</h3>
-          </div>
           <div className="search flex gap-3">
             <h3>Search : </h3>
             <input
@@ -114,98 +258,14 @@ const Employee_list = () => {
         </div>
 
         {Search_Data.Search_Name}
-        {Search_Data.Search_Range}
 
-        <div className="table w-full p-2 my-5">
-          <table className="w-full">
-            <thead className="thead">
-              <tr className="border-b-2 border-gray-100">
-                <td className="td w-[80px]">S No.</td>
-                <td>Code</td>
-                <td className="w-[25%]">First Name</td>
-                <td className="w-[10pc]">City</td>
-                <td className="w-[25%]">Designation</td>
-                <td className="w-[10pc]">Mobile</td>
-                <td className="w-[80px] text-center">Status</td>
-                <td className="text-center w-[6pc]">Action</td>
-              </tr>
-            </thead>
-
-            <tbody>
-              {TableData.map((d, i) => {
-                return (
-                  <tr key={i} className="border-b-2 border-gray-100">
-                    <td className="td">{d["s.no"]}</td>
-                    <td className="td">{d.code}</td>
-                    <td className="td">{d.name}</td>
-                    <td className="td">{d.city}</td>
-                    <td className="td">{d.designation}</td>
-                    <td className="td">{d.mobile}</td>
-                    <td
-                      className={
-                        d.status === "Active" ? "safe_badge" : "unsafe_badge"
-                      }
-                    >
-                      {d.status}
-                    </td>
-                    <td className="w-fit">
-                      <div className="action w-fit flex items-center justify-center gap-2">
-                        <div
-                          className="view_badge"
-                          onClick={() => ViewUser(d["s.no"])}
-                        >
-                          <GrFormView />
-                        </div>
-                        <div
-                          className="edit_badge"
-                          onClick={() => EditUser(d["s.no"])}
-                        >
-                          <CiEdit />
-                        </div>
-                        <div
-                          className="del_badge"
-                          onClick={() => DelUser(d["s.no"])}
-                        >
-                          <MdOutlineDelete />
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
-
-          <div className="pagination flex items-center justify-between mt-[1rem] p-[1rem]">
-            <div className="page_index">Showing {Pagination}</div>
-            <div className="pagination flex items-center gap-2">
-              <div className="text-xl cursor-pointer" onClick={handlePrev}>
-                <FaCircleArrowLeft />
-              </div>
-              <div
-                className={`p-1 px-2.5 cursor-pointer rounded-full bg-gray-200`}
-                onClick={() => setPagination(1)}
-              >
-                1
-              </div>
-              <div
-                className="p-1 px-2.5 cursor-pointer rounded-full bg-gray-200"
-                onClick={() => setPagination(2)}
-              >
-                2
-              </div>
-              <div
-                className="p-1 px-2.5 cursor-pointer rounded-full bg-gray-200"
-                onClick={() => setPagination(3)}
-              >
-                3
-              </div>
-              <div className="text-xl cursor-pointer" onClick={handleNext}>
-                <FaCircleArrowRight />
-              </div>
-            </div>
-          </div>
-        </div>
+        <DataTable
+          columns={columns}
+          data={data}
+          highlightOnHover
+          customStyles={customStyles}
+          pagination
+        />
       </div>
     </div>
   );

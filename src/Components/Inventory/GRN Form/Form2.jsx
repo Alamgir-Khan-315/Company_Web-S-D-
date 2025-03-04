@@ -25,7 +25,7 @@ const Form2 = () => {
 
   return (
     <div className="main">
-      <div className="form-body grid md:grid-cols-2 place-items-center p-3">
+      <div className="form-body grid lg:grid-cols-2 place-items-center p-3">
         <div className="weight flex w-[80%] items-center gap-5 p-2">
           <h2 className="label !w-[9pc]">Item :</h2>
           <select
@@ -63,7 +63,7 @@ const Form2 = () => {
           />
         </div>
       </div>
-      <div className="btn md:w-[90%] mx-auto flex flex-wrap -mt-5 gap-3 gap-y-0 mb-5">
+      <div className="btn lg:w-[90%] mx-auto flex flex-wrap -mt-5 gap-3 gap-y-0 mb-5">
         <div className="btn_blue" onClick={handleSubmit}>
           Add
         </div>

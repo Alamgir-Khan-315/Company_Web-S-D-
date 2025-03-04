@@ -157,8 +157,8 @@ export default function Form() {
               />
             </div>
 
-            <div className="Catogrry md:flex w-[80%] items-center gap-5 py-2">
-              <div className="Catogrry flex items-center gap-5 p-2">
+            <div className="Catogrry overflow-hidden md:flex w-[80%] items-center py-2">
+              <div className="Catogrry md:w-[50%] flex items-center gap-5 md:gap-[25%] p-2">
                 <h2 className="label">Level :</h2>
                 <select
                   className="input text-sm"
@@ -171,8 +171,8 @@ export default function Form() {
                   })}
                 </select>
               </div>
-              <div className="Catogrry flex items-center p-2">
-                <h2 className="label mr-5">Label :</h2>
+              <div className="Catogrry md:w-[50%] flex items-center gap-5 md:gap-[25%] p-2">
+                <h2 className="label">Label :</h2>
                 <select
                   className="input text-sm"
                   name="label"
@@ -196,8 +196,8 @@ export default function Form() {
               </select>
             </div>
 
-            <div className="Catogrry md:flex w-[80%] items-center gap-5 py-2">
-              <div className="Catogrry flex items-center gap-5 p-2">
+            <div className="Catogrry md:flex w-[80%] items-center py-2">
+              <div className="Catogrry md:w-[50%] flex items-center gap-5 md:gap-[25%] p-2">
                 <h2 className="label">Vintage Sec :</h2>
                 <select
                   className="input text-sm"
@@ -210,8 +210,8 @@ export default function Form() {
                   })}
                 </select>
               </div>
-              <div className="Catogrry flex items-center p-2">
-                <h2 className="label mr-5">Exc. Qty :</h2>
+              <div className="Catogrry md:w-[50%] flex items-center gap-5 md:gap-[25%] p-2">
+                <h2 className="label md:w-[13rem]">Exc. Qty :</h2>
                 <select
                   className="input text-sm"
                   name="qty"

@@ -17,7 +17,7 @@
 }
 
 .box {
-  @apply container rounded-lg bg-white mx-auto p-2;
+  @apply md:container rounded-lg mx-auto p-2;
 }
 .input {
   @apply w-full px-5 rounded bg-white border border-gray-300 p-1;

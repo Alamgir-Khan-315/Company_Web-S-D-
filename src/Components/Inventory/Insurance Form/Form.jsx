@@ -20,7 +20,7 @@ const Form = ({ sendDataToParent }) => {
   }, [Data]);
 
   return (
-    <div className="form-body grid md:grid-cols-2 place-items-center p-3">
+    <div className="form-body lg:grid lg:grid-cols-2 place-items-center lg:p-3">
       <div className="w-[90%] mx-auto col-span-2">
         <div className="name flex w-fit items-center gap-5 p-2">
           <h2 className="label">ID :</h2>
