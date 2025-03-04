@@ -39,6 +39,8 @@ const Table = ({ TableData }) => {
   const columns = [
     {
       name: "Code",
+      minWidth: "80px",
+      maxWidth: "150px",
       selector: (row) => row.Code,
     },
     {
@@ -47,14 +49,20 @@ const Table = ({ TableData }) => {
     },
     {
       name: "Qty",
+      minWidth: "80px",
+      maxWidth: "150px",
       selector: (row) => row.qty,
     },
     {
       name: "Weight",
+      minWidth: "80px",
+      maxWidth: "150px",
       selector: (row) => row.weight,
     },
     {
       name: "Action",
+      minWidth: "100px",
+      maxWidth: "150px",
       selector: (row) => row.actions,
     },
   ];

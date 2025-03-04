@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .bg {
-  @apply w-full bg-gray-200 font-sans;
+  @apply w-full text-sm bg-gray-200 font-sans;
 }
 
 /* form */

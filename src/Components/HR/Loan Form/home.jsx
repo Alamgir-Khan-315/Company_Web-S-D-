@@ -5,7 +5,7 @@ import Form from "./Form";
 
 const Home = () => {
   return (
-    <div className="main h-full w-full">
+    <div className="main h-full w-full bg-gray-200">
       <div className="navigation ml-5 p-2 flex items-center font-semibold text-gray-500">
         <Link to="/">
           <h1 className="text hover:text-black cursor-pointer">Home</h1>

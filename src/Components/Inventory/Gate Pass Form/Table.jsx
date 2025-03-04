@@ -4,14 +4,6 @@ import { MdOutlineDelete } from "react-icons/md";
 import DataTable from "react-data-table-component";
 
 const Table = ({ TableData }) => {
-  // const Column = [
-  //   { Title: "Code" },
-  //   { Title: "Discription" },
-  //   { Title: "Qty" },
-  //   { Title: "Weight" },
-  //   { Title: "Action", class: "w-[100px]" },
-  // ];
-
   const [data, setData] = useState([
     {
       Code: "1",
@@ -39,6 +31,8 @@ const Table = ({ TableData }) => {
   const columns = [
     {
       name: "Code",
+      minWidth: "80px",
+      maxWidth: "150px",
       selector: (row) => row.Code,
     },
     {
@@ -47,14 +41,20 @@ const Table = ({ TableData }) => {
     },
     {
       name: "Qty",
+      minWidth: "80px",
+      maxWidth: "150px",
       selector: (row) => row.qty,
     },
     {
       name: "Weight",
+      minWidth: "80px",
+      maxWidth: "150px",
       selector: (row) => row.weight,
     },
     {
       name: "Action",
+      minWidth: "100px",
+      maxWidth: "150px",
       selector: (row) => row.actions,
     },
   ];

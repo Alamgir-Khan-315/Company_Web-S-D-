@@ -16,7 +16,7 @@ const Form = ({ sendDataToParent }) => {
   }
 
   return (
-    <div className="main w-full overflow-x-auto">
+    <div className="main w-full">
       <div className="form-body  grid md:grid-cols-2 place-items-center p-3">
         <div className="weight flex w-[80%] items-center gap-5 p-2">
           <h2 className="label">Loan ID :</h2>
