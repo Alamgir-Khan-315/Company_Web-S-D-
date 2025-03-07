@@ -20,12 +20,7 @@ const Form = ({ sendDataToParent }) => {
       <div className="form-body  grid md:grid-cols-2 place-items-center p-3">
         <div className="weight flex w-[80%] items-center gap-5 p-2">
           <h2 className="label">Department :</h2>
-          <select
-            className="input"
-            id=""
-            name="department"
-            onChange={handleInputData}
-          >
+          <select className="input" id="" name="department" onChange={handleInputData}>
             <option>Low</option>
             <option>Medium</option>
             <option>Large</option>
@@ -34,12 +29,7 @@ const Form = ({ sendDataToParent }) => {
 
         <div className="weight flex w-[80%] items-center gap-5 p-2">
           <h2 className="label">Employee :</h2>
-          <select
-            className="input"
-            id=""
-            name="employee"
-            onChange={handleInputData}
-          >
+          <select className="input" id="" name="employee" onChange={handleInputData}>
             <option>Low</option>
             <option>Medium</option>
             <option>Large</option>
@@ -48,32 +38,17 @@ const Form = ({ sendDataToParent }) => {
 
         <div className="name flex w-[80%] items-center gap-5 p-2">
           <h2 className="label">From :</h2>
-          <input
-            className="input"
-            type="date"
-            name="from"
-            onChange={handleInputData}
-          />
+          <input className="input" type="date" name="from" onChange={handleInputData} />
         </div>
 
         <div className="name flex w-[80%] items-center gap-5 p-2">
           <h2 className="label">To :</h2>
-          <input
-            className="input"
-            type="date"
-            name="to"
-            onChange={handleInputData}
-          />
+          <input className="input" type="date" name="to" onChange={handleInputData} />
         </div>
 
         <div className="name flex w-[80%] items-center gap-5 p-2">
           <h2 className="label">H Adjust :</h2>
-          <input
-            className="input"
-            type="text"
-            name="h_adjust"
-            onChange={handleInputData}
-          />
+          <input className="input" type="text" name="h_adjust" onChange={handleInputData} />
         </div>
       </div>
 

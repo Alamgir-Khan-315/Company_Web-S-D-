@@ -37,9 +37,7 @@ const Home = () => {
         <Form2 />
       </div>
 
-      <pre className="mt-4 p-2 bg-gray-100 rounded">
-        {JSON.stringify(Data, null, 2)}
-      </pre>
+      <pre className="mt-4 p-2 bg-gray-100 rounded">{JSON.stringify(Data, null, 2)}</pre>
     </div>
   );
 };

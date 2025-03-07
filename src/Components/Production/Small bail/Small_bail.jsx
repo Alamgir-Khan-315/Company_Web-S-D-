@@ -46,9 +46,7 @@ const Small_bail = () => {
           <div className="table w-full bg-red-100">Yha table bny g</div>
         </div>
       </div>
-      <pre className="mt-4 p-2 bg-gray-100 rounded">
-        {JSON.stringify(Data, null, 2)}
-      </pre>
+      <pre className="mt-4 p-2 bg-gray-100 rounded">{JSON.stringify(Data, null, 2)}</pre>
     </div>
   );
 };

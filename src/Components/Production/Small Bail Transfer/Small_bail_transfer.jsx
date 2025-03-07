@@ -11,9 +11,7 @@ const Small_bail_transfer = () => {
   };
 
   const currentDate = new Date();
-  const DateNow = `${
-    currentDate.getMonth() + 1
-  }/${currentDate.getDate()}/${currentDate.getFullYear()}`;
+  const DateNow = `${currentDate.getMonth() + 1}/${currentDate.getDate()}/${currentDate.getFullYear()}`;
 
   return (
     <div className="main h-full w-full">
@@ -21,8 +19,7 @@ const Small_bail_transfer = () => {
         <Link to="/">
           <h1 className="text hover:text-black cursor-pointer">Home</h1>
         </Link>{" "}
-        &nbsp; / &nbsp;{" "}
-        <h1 className="text-black cursor-pointer">Small Bail Transfer</h1>
+        &nbsp; / &nbsp; <h1 className="text-black cursor-pointer">Small Bail Transfer</h1>
       </div>
 
       <div className="box mt-[1rem] !p-[1rem]">
@@ -41,21 +38,14 @@ const Small_bail_transfer = () => {
         <div className="barcode my-5">
           <div className="weight flex items-center gap-5 p-2">
             <h2 className="label">Input Barcode :</h2>
-            <input
-              className="input"
-              type="text"
-              name="barcode"
-              onChange={(e) => setBarcode(e.target.value)}
-            />
+            <input className="input" type="text" name="barcode" onChange={(e) => setBarcode(e.target.value)} />
           </div>
 
           {Barcode}
         </div>
       </div>
 
-      <pre className="mt-4 p-2 bg-gray-100 rounded">
-        {JSON.stringify(Data, null, 2)}
-      </pre>
+      <pre className="mt-4 p-2 bg-gray-100 rounded">{JSON.stringify(Data, null, 2)}</pre>
     </div>
   );
 };

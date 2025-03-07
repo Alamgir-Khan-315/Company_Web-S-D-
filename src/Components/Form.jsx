@@ -2,18 +2,8 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function Form() {
-  const state = [
-    { Country: "Pakistan" },
-    { Country: "India" },
-    { Country: "England" },
-    { Country: "etc" },
-  ];
-  const Level = [
-    { level: "1" },
-    { level: "2" },
-    { level: "3" },
-    { level: "4" },
-  ];
+  const state = [{ Country: "Pakistan" }, { Country: "India" }, { Country: "England" }, { Country: "etc" }];
+  const Level = [{ level: "1" }, { level: "2" }, { level: "3" }, { level: "4" }];
 
   const [Data, setData] = useState({
     name: "",
@@ -58,52 +48,27 @@ export default function Form() {
           <div className="form-body grid md:grid-cols-2 place-items-center p-3">
             <div className="name flex w-[80%] items-center gap-5 p-2">
               <h2 className="label">Name :</h2>
-              <input
-                className="input"
-                type="text"
-                name="name"
-                onChange={handleInputData}
-              />
+              <input className="input" type="text" name="name" onChange={handleInputData} />
             </div>
 
             <div className="slection flex w-[80%] items-center gap-5 p-2">
               <h2 className="label">Selection :</h2>
-              <input
-                className="input"
-                type=""
-                name="selection"
-                onChange={handleInputData}
-              />
+              <input className="input" type="" name="selection" onChange={handleInputData} />
             </div>
 
             <div className="bail-size flex w-[80%] items-center gap-5 p-2">
               <h2 className="label">Bail size :</h2>
-              <input
-                className="input"
-                type=""
-                name="bail_size"
-                onChange={handleInputData}
-              />
+              <input className="input" type="" name="bail_size" onChange={handleInputData} />
             </div>
 
             <div className="weight flex w-[80%] items-center gap-5 p-2">
               <h2 className="label">Weight :</h2>
-              <input
-                className="input"
-                type=""
-                name="weight"
-                onChange={handleInputData}
-              />
+              <input className="input" type="" name="weight" onChange={handleInputData} />
             </div>
 
             <div className="packing flex w-[80%] items-center gap-5 p-2">
               <h2 className="label">Packing :</h2>
-              <select
-                className="input text-sm"
-                id=""
-                name="packing"
-                onChange={handleInputData}
-              >
+              <select className="input text-sm" id="" name="packing" onChange={handleInputData}>
                 <option>Small</option>
                 <option>Medium</option>
                 <option>Large</option>
@@ -112,22 +77,12 @@ export default function Form() {
 
             <div className="Catogrry flex w-[80%] items-center gap-5 p-2">
               <h2 className="label">Catogrry :</h2>
-              <input
-                className="input"
-                type=""
-                name="catogary"
-                onChange={handleInputData}
-              />
+              <input className="input" type="" name="catogary" onChange={handleInputData} />
             </div>
 
             <div className="packing flex w-[80%] items-center gap-5 p-2">
               <h2 className="label">Status :</h2>
-              <select
-                className="input text-sm"
-                name="status"
-                onChange={handleInputData}
-                id=""
-              >
+              <select className="input text-sm" name="status" onChange={handleInputData} id="">
                 <option>Single</option>
                 <option>Married</option>
               </select>
@@ -135,12 +90,7 @@ export default function Form() {
 
             <div className="packing flex w-[80%] items-center gap-5 p-2">
               <h2 className="label">Region :</h2>
-              <select
-                className="input text-sm"
-                name="region"
-                onChange={handleInputData}
-                id=""
-              >
+              <select className="input text-sm" name="region" onChange={handleInputData} id="">
                 {state.map((c, i) => {
                   return <option key={i}>{c.Country}</option>;
                 })}
@@ -149,23 +99,13 @@ export default function Form() {
 
             <div className="Catogrry flex w-[80%] items-center gap-5 p-2">
               <h2 className="label">Item rate :</h2>
-              <input
-                className="input"
-                type=""
-                name="item_rate"
-                onChange={handleInputData}
-              />
+              <input className="input" type="" name="item_rate" onChange={handleInputData} />
             </div>
 
             <div className="Catogrry overflow-hidden md:flex w-[80%] items-center py-2">
               <div className="Catogrry md:w-[50%] flex items-center gap-5 md:gap-[25%] p-2">
                 <h2 className="label">Level :</h2>
-                <select
-                  className="input text-sm"
-                  name="level"
-                  onChange={handleInputData}
-                  id=""
-                >
+                <select className="input text-sm" name="level" onChange={handleInputData} id="">
                   {Level.map((c, i) => {
                     return <option key={i}>{c.level}</option>;
                   })}
@@ -173,12 +113,7 @@ export default function Form() {
               </div>
               <div className="Catogrry md:w-[50%] flex items-center gap-5 md:gap-[25%] p-2">
                 <h2 className="label">Label :</h2>
-                <select
-                  className="input text-sm"
-                  name="label"
-                  onChange={handleInputData}
-                  id=""
-                >
+                <select className="input text-sm" name="label" onChange={handleInputData} id="">
                   <option></option>
                 </select>
               </div>
@@ -186,12 +121,7 @@ export default function Form() {
 
             <div className="Catogrry flex w-[80%] items-center gap-5 p-2">
               <h2 className="label">UOM :</h2>
-              <select
-                className="input text-sm"
-                name="uom"
-                onChange={handleInputData}
-                id=""
-              >
+              <select className="input text-sm" name="uom" onChange={handleInputData} id="">
                 <option>Select value</option>
               </select>
             </div>
@@ -199,12 +129,7 @@ export default function Form() {
             <div className="Catogrry md:flex w-[80%] items-center py-2">
               <div className="Catogrry md:w-[50%] flex items-center gap-5 md:gap-[25%] p-2">
                 <h2 className="label">Vintage Sec :</h2>
-                <select
-                  className="input text-sm"
-                  name="vintage"
-                  onChange={handleInputData}
-                  id=""
-                >
+                <select className="input text-sm" name="vintage" onChange={handleInputData} id="">
                   {Level.map((c, i) => {
                     return <option key={i}>{c.level}</option>;
                   })}
@@ -212,12 +137,7 @@ export default function Form() {
               </div>
               <div className="Catogrry md:w-[50%] flex items-center gap-5 md:gap-[25%] p-2">
                 <h2 className="label md:w-[13rem]">Exc. Qty :</h2>
-                <select
-                  className="input text-sm"
-                  name="qty"
-                  onChange={handleInputData}
-                  id=""
-                >
+                <select className="input text-sm" name="qty" onChange={handleInputData} id="">
                   <option value=""></option>
                 </select>
               </div>
@@ -228,9 +148,7 @@ export default function Form() {
             <div className="btn_blue">Submit</div>
           </div>
 
-          <pre className="mt-4 p-2 bg-gray-100 rounded">
-            {JSON.stringify(Data, null, 2)}
-          </pre>
+          <pre className="mt-4 p-2 bg-gray-100 rounded">{JSON.stringify(Data, null, 2)}</pre>
         </form>
       </div>
     </div>

@@ -148,15 +148,7 @@ const Employee_list = () => {
       name: "Status",
       width: "80px",
       selector: (row) => row.status,
-      cell: (row) => (
-        <span
-          className={`px-2 py-1 rounded text-white ${
-            row.status === "Active" ? "bg-green-500" : "bg-red-500"
-          }`}
-        >
-          {row.status}
-        </span>
-      ),
+      cell: (row) => <span className={`px-2 py-1 rounded text-white ${row.status === "Active" ? "bg-green-500" : "bg-red-500"}`}>{row.status}</span>,
     },
     {
       name: "Action",
@@ -164,22 +156,13 @@ const Employee_list = () => {
       selector: (row) => row.action,
       cell: (row) => (
         <div className="action w-fit flex items-center justify-center gap-2">
-          <div
-            className="view_badge cursor-pointer"
-            onClick={() => ViewUser(row.s_no)}
-          >
+          <div className="view_badge cursor-pointer" onClick={() => ViewUser(row.s_no)}>
             <GrFormView />
           </div>
-          <div
-            className="edit_badge cursor-pointer"
-            onClick={() => EditUser(row.s_no)}
-          >
+          <div className="edit_badge cursor-pointer" onClick={() => EditUser(row.s_no)}>
             <CiEdit />
           </div>
-          <div
-            className="del_badge cursor-pointer"
-            onClick={() => DelUser(row.s_no)}
-          >
+          <div className="del_badge cursor-pointer" onClick={() => DelUser(row.s_no)}>
             <MdOutlineDelete />
           </div>
         </div>
@@ -229,18 +212,14 @@ const Employee_list = () => {
                 <div className="icon text-white p-2 text-xl">
                   <IoMdAddCircle />{" "}
                 </div>
-                <div className="add-form text-white p-2 rounded-tr-lg rounded-br-lg bg-blue-500">
-                  Add New
-                </div>
+                <div className="add-form text-white p-2 rounded-tr-lg rounded-br-lg bg-blue-500">Add New</div>
               </div>
             </Link>
             <div className="Add-New flex items-center rounded-lg cursor-pointer bg-gray-300">
               <div className="icon p-2 text-xl">
                 <IoMdRefresh />{" "}
               </div>
-              <div className="add-form p-2 rounded-tr-lg rounded-br-lg bg-gray-200">
-                Refresh
-              </div>
+              <div className="add-form p-2 rounded-tr-lg rounded-br-lg bg-gray-200">Refresh</div>
             </div>
           </div>
         </div>
@@ -248,24 +227,13 @@ const Employee_list = () => {
         <div className="search-portion flex justify-between p-5 box-border">
           <div className="search flex gap-3">
             <h3>Search : </h3>
-            <input
-              className="w-[8pc] border border-gray-300 rounded-lg pl-3"
-              type="text"
-              name="Search_Name"
-              onChange={handleSearchQuery}
-            />
+            <input className="w-[8pc] border border-gray-300 rounded-lg pl-3" type="text" name="Search_Name" onChange={handleSearchQuery} />
           </div>
         </div>
 
         {Search_Data.Search_Name}
 
-        <DataTable
-          columns={columns}
-          data={data}
-          highlightOnHover
-          customStyles={customStyles}
-          pagination
-        />
+        <DataTable columns={columns} data={data} highlightOnHover customStyles={customStyles} pagination />
       </div>
     </div>
   );

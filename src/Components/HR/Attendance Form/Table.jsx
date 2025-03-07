@@ -75,12 +75,7 @@ const Table = () => {
     {
       name: "In Time",
       selector: (row, index) => (
-        <input
-          type="time"
-          value={row.In_Time}
-          onChange={(e) => handleInputChange(e, "In_Time", index)}
-          className="border w-[85px] border-gray-200 text-xs rounded-md"
-        />
+        <input type="time" value={row.In_Time} onChange={(e) => handleInputChange(e, "In_Time", index)} className="border w-[85px] border-gray-200 text-xs rounded-md" />
       ),
       width: "115px",
     },
@@ -99,96 +94,56 @@ const Table = () => {
     {
       name: "D",
       selector: (row, index) => (
-        <input
-          type="text"
-          value={row.D}
-          onChange={(e) => handleInputChange(e, "D", index)}
-          className="border w-10 border-gray-200 text-sm rounded-md"
-        />
+        <input type="text" value={row.D} onChange={(e) => handleInputChange(e, "D", index)} className="border w-10 border-gray-200 text-sm rounded-md" />
       ),
       width: "72px",
     },
     {
       name: "W",
       selector: (row, index) => (
-        <input
-          type="text"
-          value={row.W}
-          onChange={(e) => handleInputChange(e, "W", index)}
-          className="border w-10 border-gray-200 text-sm rounded-md"
-        />
+        <input type="text" value={row.W} onChange={(e) => handleInputChange(e, "W", index)} className="border w-10 border-gray-200 text-sm rounded-md" />
       ),
       width: "72px",
     },
     {
       name: "H",
       selector: (row, index) => (
-        <input
-          type="text"
-          value={row.H}
-          onChange={(e) => handleInputChange(e, "H", index)}
-          className="border w-10 border-gray-200 text-sm rounded-md"
-        />
+        <input type="text" value={row.H} onChange={(e) => handleInputChange(e, "H", index)} className="border w-10 border-gray-200 text-sm rounded-md" />
       ),
       width: "72px",
     },
     {
       name: "S",
       selector: (row, index) => (
-        <input
-          type="text"
-          value={row.S}
-          onChange={(e) => handleInputChange(e, "S", index)}
-          className="border w-10 border-gray-200 text-sm rounded-md"
-        />
+        <input type="text" value={row.S} onChange={(e) => handleInputChange(e, "S", index)} className="border w-10 border-gray-200 text-sm rounded-md" />
       ),
       width: "72px",
     },
     {
       name: "Hours",
       selector: (row, index) => (
-        <input
-          type="text"
-          value={row.Hours}
-          onChange={(e) => handleInputChange(e, "Hours", index)}
-          className="border w-10 border-gray-200 text-sm rounded-md"
-        />
+        <input type="text" value={row.Hours} onChange={(e) => handleInputChange(e, "Hours", index)} className="border w-10 border-gray-200 text-sm rounded-md" />
       ),
       width: "72px",
     },
     {
       name: "OT",
       selector: (row, index) => (
-        <input
-          type="text"
-          value={row.OT}
-          onChange={(e) => handleInputChange(e, "OT", index)}
-          className="border w-10 border-gray-200 text-sm rounded-md"
-        />
+        <input type="text" value={row.OT} onChange={(e) => handleInputChange(e, "OT", index)} className="border w-10 border-gray-200 text-sm rounded-md" />
       ),
       width: "72px",
     },
     {
       name: "Late",
       selector: (row, index) => (
-        <input
-          type="text"
-          value={row.Late}
-          onChange={(e) => handleInputChange(e, "Late", index)}
-          className="border w-10 border-gray-200 text-sm rounded-md"
-        />
+        <input type="text" value={row.Late} onChange={(e) => handleInputChange(e, "Late", index)} className="border w-10 border-gray-200 text-sm rounded-md" />
       ),
       width: "72px",
     },
     {
       name: "Extra",
       selector: (row, index) => (
-        <input
-          type="text"
-          value={row.Extra}
-          onChange={(e) => handleInputChange(e, "Extra", index)}
-          className="border w-10 border-gray-200 text-sm rounded-md"
-        />
+        <input type="text" value={row.Extra} onChange={(e) => handleInputChange(e, "Extra", index)} className="border w-10 border-gray-200 text-sm rounded-md" />
       ),
       width: "72px",
     },

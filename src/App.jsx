@@ -29,13 +29,7 @@ import Employee_form from "./Components/HR/Employee form/Employee_form";
 import Add_employee from "./Components/Employee/Add new employee/Add_employee";
 
 import { GoSidebarExpand, GoSidebarCollapse } from "react-icons/go";
-import {
-  FaAddressCard,
-  FaFileImport,
-  FaPlusCircle,
-  FaCalendarTimes,
-  FaMoneyBillAlt,
-} from "react-icons/fa";
+import { FaAddressCard, FaFileImport, FaPlusCircle, FaCalendarTimes, FaMoneyBillAlt } from "react-icons/fa";
 import { IoMdPersonAdd, IoIosTime } from "react-icons/io";
 import { RiLogoutBoxFill, RiFileAddFill } from "react-icons/ri";
 import { HiShoppingCart, HiDocumentReport } from "react-icons/hi";
@@ -325,56 +319,28 @@ const App = () => {
             {/*  */}
             <div
               className={`nav font-semibold fixed top-0 left-0 h-[91vh] overflow-y-auto scrollbar-hide shadow-md
-                     ${
-                       NavToggle === true
-                         ? "w-[116px]"
-                         : " md:flex md:flex-col sm:w-[50px] md:w-[13.5pc]"
-                     } transition-all duration-500`}
+                     ${NavToggle === true ? "w-[116px]" : " md:flex md:flex-col sm:w-[50px] md:w-[13.5pc]"} transition-all duration-500`}
             >
               <div className="nav-top flex items-center justify-between w-full p-4">
-                <div className={`${NavToggle === false && "hidden md:flex"}`}>
-                  Logo
-                </div>
+                <div className={`${NavToggle === false && "hidden md:flex"}`}>Logo</div>
                 <div className="icon" onClick={() => setNavToggle(!NavToggle)}>
-                  {NavToggle === true ? (
-                    <GoSidebarCollapse className="text-xl" />
-                  ) : (
-                    <GoSidebarExpand className="text-xl" />
-                  )}
+                  {NavToggle === true ? <GoSidebarCollapse className="text-xl" /> : <GoSidebarExpand className="text-xl" />}
                 </div>
               </div>
 
-              <div
-                className={`nav-item w-full flex flex-col text-sm gap-3 ${
-                  NavToggle === false && "hidden md:flex"
-                } transition-all duration-300`}
-              >
+              <div className={`nav-item w-full flex flex-col text-sm gap-3 ${NavToggle === false && "hidden md:flex"} transition-all duration-300`}>
                 {NavMenu.map((d, i) => (
                   <div key={i}>
                     <Link to={d.Link}>
                       <div
                         className={`flex gap-4 items-center border-l-4 p-2 rounded-tl-full rounded-bl-full shadow-md hover:bg-gray-100 relative 
-                        ${
-                          Nav_Selected === d.Name
-                            ? "bg-white rounded-tl-full rounded-bl-full"
-                            : "bg-transparent"
-                        }`}
+                        ${Nav_Selected === d.Name ? "bg-white rounded-tl-full rounded-bl-full" : "bg-transparent"}`}
                         onClick={() => Handle_Nav_Selected(d.Name)}
                       >
-                        <div
-                          className={`icon text-xl ${
-                            NavToggle === true ? "mx-auto" : "ml-4"
-                          }`}
-                        >
+                        <div className={`icon text-xl ${NavToggle === true ? "mx-auto" : "ml-4"}`}>
                           <d.Icon />
                         </div>
-                        <div
-                          className={`home ${
-                            NavToggle === true ? "hidden" : "flex"
-                          }  transition-all duration-500`}
-                        >
-                          {d.Title}
-                        </div>
+                        <div className={`home ${NavToggle === true ? "hidden" : "flex"}  transition-all duration-500`}>{d.Title}</div>
                         <div className="icon">
                           {d?.Children && (
                             <div className={`absolute right-5 top-2.5`}>
@@ -388,26 +354,13 @@ const App = () => {
                         d.Children &&
                         d.Children.length > 0 &&
                         d.Children.map((c, j) => (
-                          <div
-                            key={j}
-                            className="production_list w-full flex flex-col gap-1"
-                          >
+                          <div key={j} className="production_list w-full flex flex-col gap-1">
                             <Link to={c.Link}>
                               <p
-                                className={`nav_list_p ${
-                                  Child_Selected === c.Name
-                                    ? "bg-gray-100 rounded-tl-full rounded-bl-full"
-                                    : "bg-transparent"
-                                }`}
+                                className={`nav_list_p ${Child_Selected === c.Name ? "bg-gray-100 rounded-tl-full rounded-bl-full" : "bg-transparent"}`}
                                 onClick={() => setChild_Selected(c.Name)}
                               >
-                                {NavToggle === true ? (
-                                  <div className="-ml-[2pc] text-[12px]">
-                                    {c.Title}
-                                  </div>
-                                ) : (
-                                  <div>{c.Title}</div>
-                                )}
+                                {NavToggle === true ? <div className="-ml-[2pc] text-[12px]">{c.Title}</div> : <div>{c.Title}</div>}
                               </p>
                             </Link>
                           </div>
@@ -424,42 +377,21 @@ const App = () => {
               } bottom-2 text-center flex items-center ml-3 shadow-lg justify-center gap-3 hover:bg-gray-100`}
               onClick={() => alert("User Logged out")}
             >
-              <div
-                className={` ${
-                  NavToggle === true ? "flex" : "hidden md:flex"
-                } `}
-              >
-                <RiLogoutBoxFill
-                  className={` ${
-                    NavToggle === true ? "hidden md:flex" : "flex"
-                  } `}
-                />
+              <div className={` ${NavToggle === true ? "flex" : "hidden md:flex"} `}>
+                <RiLogoutBoxFill className={` ${NavToggle === true ? "hidden md:flex" : "flex"} `} />
               </div>
-              <div
-                className={` ${
-                  NavToggle === true ? "flex md:hidden" : "hidden md:flex"
-                } `}
-              >
-                Log out
-              </div>
+              <div className={` ${NavToggle === true ? "flex md:hidden" : "hidden md:flex"} `}>Log out</div>
             </div>
           </div>
 
           {/* ------------------------------------------------------------------------------- */}
-          <div
-            className={`routes px-4 w-full  ${
-              NavToggle === true ? "ml-[100px]" : "md:ml-[13pc]"
-            } transition-all duration-500`}
-          >
+          <div className={`routes px-4 w-full  ${NavToggle === true ? "ml-[100px]" : "md:ml-[13pc]"} transition-all duration-500`}>
             <Routes>
               {/* nav */}
               <Route path="/" element={<Employee_list />} />
               <Route path="/Production" element={<Production />} />
               <Route path="/Production/Small_bale" element={<Small_bail />} />
-              <Route
-                path="/Production/Small_bale_transfer"
-                element={<Small_bail_transfer />}
-              />
+              <Route path="/Production/Small_bale_transfer" element={<Small_bail_transfer />} />
               <Route path="/Production/big_bail" element={<Big_bail />} />
 
               <Route path="/Hr" element={<Hr />} />
@@ -471,22 +403,10 @@ const App = () => {
               <Route path="/Import/form" element={<Import_form />} />
 
               <Route path="/Inventory" element={<Inventory />} />
-              <Route
-                path="/Inventory/GRN_form"
-                element={<Inventory_GRN_form />}
-              />
-              <Route
-                path="/Inventory/Insurance_form"
-                element={<Inventory_Insurance_form />}
-              />
-              <Route
-                path="/Inventory/Dc_form"
-                element={<Inventory_Dc_form />}
-              />
-              <Route
-                path="/Inventory/Gate_pass_form"
-                element={<Gate_pass_form />}
-              />
+              <Route path="/Inventory/GRN_form" element={<Inventory_GRN_form />} />
+              <Route path="/Inventory/Insurance_form" element={<Inventory_Insurance_form />} />
+              <Route path="/Inventory/Dc_form" element={<Inventory_Dc_form />} />
+              <Route path="/Inventory/Gate_pass_form" element={<Gate_pass_form />} />
 
               <Route path="/Form" element={<Form />} />
               <Route path="/Employee_form" element={<Employee_form />} />
