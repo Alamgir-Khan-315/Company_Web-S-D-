@@ -29,7 +29,7 @@ const Small_bail_transfer = () => {
 
         <Form sendDataToParent={handleChildData} />
 
-        <div className="btn md:w-[90%] mx-auto flex flex-wrap items-center -mt-5 space-y-0 gap-2 md:gap-5  ">
+        <div className="btn md:w-[90%] mx-auto flex flex-wrap items-center -mt-5 gap-2 md:gap-5  ">
           <div className="btn_blue">Order Transfer</div>
           <div className="btn_blue">Delete</div>
           <div className="btn_blue">Item Transfer</div>
