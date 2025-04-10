@@ -5,6 +5,9 @@ import Hr from "./Components/HR/home";
 import Attendence_form from "./Components/HR/Attendance Form/home";
 import Loan_form from "./Components/HR/Loan Form/home";
 
+import Bank_payment from './Components/Accounting/Bank Payment/Bank_patment_form'
+import COA_form from './Components/Accounting/COA_Form/COA_Form'
+
 import Generate_salary from "./Components/HR/Generate salary/home";
 
 import Production from "./Components/Production/home";
@@ -14,6 +17,7 @@ import Big_bail from "./Components/Production/Big bail/Big_bail";
 
 import Import from "./Components/Import/home";
 import Import_form from "./Components/Import/Form/Form";
+import Issuance_form from "./Components/Import/Issuance Form/Issuance_form";
 
 import Inventory from "./Components/Inventory/home";
 import Inventory_GRN_form from "./Components/Inventory/GRN Form/home";
@@ -33,7 +37,7 @@ import { FaAddressCard, FaFileImport, FaPlusCircle, FaCalendarTimes, FaMoneyBill
 import { IoMdPersonAdd, IoIosTime } from "react-icons/io";
 import { RiLogoutBoxFill, RiFileAddFill } from "react-icons/ri";
 import { HiShoppingCart, HiDocumentReport } from "react-icons/hi";
-import { MdInventory2, MdAccountBalance } from "react-icons/md";
+import { MdInventory2, MdAccountBalance , MdAccountBalanceWallet  } from "react-icons/md";
 import { FaToriiGate, FaAddressBook } from "react-icons/fa6";
 
 const App = () => {
@@ -43,6 +47,33 @@ const App = () => {
   const [ExpandedTab, setExpandedTab] = useState(null);
 
   const NavMenu = [
+    {
+      Title: "Accounting",
+      Icon: MdAccountBalanceWallet ,
+      Name: "accounting",
+      Link: "Accounting",
+      Role: "",
+      Children: [
+        {
+          Title: "Bank Payment",
+          Icon: IoMdPersonAdd,
+          Name: "Bank_payment",
+          Link: "Accounting/Bank_payment",
+        },
+        {
+          Title: "COA Form",
+          Icon: IoMdPersonAdd,
+          Name: "coa_form",
+          Link: "Accounting/COA_form",
+        },
+        {
+          Title: "Report",
+          Icon: IoMdPersonAdd,
+          Name: "report",
+          Link: "report",
+        },
+      ],
+    },
     {
       Title: "Production",
       Icon: HiShoppingCart,
@@ -271,6 +302,12 @@ const App = () => {
       Role: "",
       Children: [
         {
+          Title: "Issuance Form",
+          Icon: FaAddressBook,
+          Name: "issuance_form",
+          Link: "Import/Issuance_form",
+        },
+        {
           Title: "Rags Form",
           Icon: FaAddressBook,
           Name: "rags_form",
@@ -388,6 +425,9 @@ const App = () => {
           <div className={`routes px-4 w-full  ${NavToggle === true ? "ml-[100px]" : "md:ml-[13pc]"} transition-all duration-500`}>
             <Routes>
               {/* nav */}
+              <Route path="Accounting/COA_form" element={<COA_form/>}/>
+              <Route path="Accounting/Bank_payment" element={<Bank_payment/>}/>
+
               <Route path="/" element={<Employee_list />} />
               <Route path="/Production" element={<Production />} />
               <Route path="/Production/Small_bale" element={<Small_bail />} />
@@ -401,6 +441,7 @@ const App = () => {
 
               <Route path="/Import" element={<Import />} />
               <Route path="/Import/form" element={<Import_form />} />
+              <Route path="/Import/Issuance_form" element={<Issuance_form />} />
 
               <Route path="/Inventory" element={<Inventory />} />
               <Route path="/Inventory/GRN_form" element={<Inventory_GRN_form />} />
