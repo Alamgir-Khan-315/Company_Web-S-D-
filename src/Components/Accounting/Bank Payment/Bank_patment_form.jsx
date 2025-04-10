@@ -38,11 +38,6 @@ const Bank_patment_form = () => {
         };
         setData({
           ...Data,
-          id: "",
-          date: "",
-          head: "",
-          cheque: "",
-          amount: "",
           tableData: [...Data.tableData, newRow]
         });
       }
@@ -70,6 +65,7 @@ const Bank_patment_form = () => {
             <h1 className="Rounded_Title mb-4">Bank Payment Form</h1>
 
     {/* form */}
+            <section>
             <div className="form-body grid md:grid-cols-2 place-items-center p-3">
                 <div className="flex w-[80%] items-center gap-5 p-2">
                     <h2 className="label">ID :</h2>
@@ -126,83 +122,107 @@ const Bank_patment_form = () => {
                         onChange={handleData}
                         />
                     </div>
-                </div>
-                <button className='btn_green' onClick={handleAddRow}>Add</button>
+            </div>
+            
+            <button className='btn_green text-white' onClick={handleAddRow}>Add</button>
+            </section>
 
     {/* table */}
-            <table className="w-full border-collapse border mt-4">
-              <thead>
-                <tr className="bg-gray-100">
-                  <th className="border p-2">S.No</th>
-                  <th className="border p-2">Code</th>
-                  <th className="border p-2">Head</th>
-                  <th className="border p-2">Debit</th>
-                  <th className="border p-2">Credit</th>
-                  <th className="border p-2">Description</th>
-                  <th className="border p-2">Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                {Data.tableData?.map((row, index) => (
-                  <tr key={index}>
-                    <td className="border p-2">{index + 1}</td>
-                    <td className="border p-2">
-                      <input
-                        type="text"
-                        name="code"
-                        className="w-full p-1"
-                        value={row.code}
-                        onChange={(e) => handleTableInput(e, index)}
-                      />
-                    </td>
-                    <td className="border p-2">
-                      <input
-                        type="text"
-                        name="head"
-                        className="w-full p-1"
-                        value={row.head}
-                        onChange={(e) => handleTableInput(e, index)}
-                      />
-                    </td>
-                    <td className="border p-2">
-                      <input
-                        type="number"
-                        name="debit"
-                        className="w-full p-1"
-                        value={row.debit}
-                        onChange={(e) => handleTableInput(e, index)}
-                      />
-                    </td>
-                    <td className="border p-2">
-                      <input
-                        type="number"
-                        name="credit"
-                        className="w-full p-1"
-                        value={row.credit}
-                        onChange={(e) => handleTableInput(e, index)}
-                      />
-                    </td>
-                    <td className="border p-2">
-                      <input
-                        type="text"
-                        name="description"
-                        className="w-full p-1"
-                        value={row.description}
-                        onChange={(e) => handleTableInput(e, index)}
-                      />
-                    </td>
-                    <td className="border p-2">
-                      <button
-                        className="bg-red-500 text-white px-2 py-1 rounded"
-                        onClick={() => handleDeleteRow(index)}
-                      >
-                        Delete
-                      </button>
-                    </td>
+            <section>
+              <table className="w-full border-collapse border mt-4">
+                <thead>
+                  <tr className="bg-gray-100">
+                    <th className="border p-2">S.No</th>
+                    <th className="border p-2">Code</th>
+                    <th className="border p-2">Head</th>
+                    <th className="border p-2">Debit</th>
+                    <th className="border p-2">Credit</th>
+                    <th className="border p-2">Description</th>
+                    <th className="border p-2">Action</th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody>
+                  {Data.tableData?.map((row, index) => (
+                    <tr key={index}>
+                      <td className="border p-2">{index + 1}</td>
+                      <td className="border p-2">
+                        <input
+                          type="text"
+                          name="code"
+                          className="w-full p-1"
+                          value={row.code}
+                          onChange={(e) => handleTableInput(e, index)}
+                        />
+                      </td>
+                      <td className="border p-2">
+                        <input
+                          type="text"
+                          name="head"
+                          className="w-full p-1"
+                          value={row.head}
+                          onChange={(e) => handleTableInput(e, index)}
+                        />
+                      </td>
+                      <td className="border p-2">
+                        <input
+                          type="number"
+                          name="debit"
+                          className="w-full p-1"
+                          value={row.debit}
+                          onChange={(e) => handleTableInput(e, index)}
+                        />
+                      </td>
+                      <td className="border p-2">
+                        <input
+                          type="number"
+                          name="credit"
+                          className="w-full p-1"
+                          value={row.credit}
+                          onChange={(e) => handleTableInput(e, index)}
+                        />
+                      </td>
+                      <td className="border p-2">
+                        <input
+                          type="text"
+                          name="description"
+                          className="w-full p-1"
+                          value={row.description}
+                          onChange={(e) => handleTableInput(e, index)}
+                        />
+                      </td>
+                      <td className="border p-2">
+                        <button
+                          className="bg-red-500 text-white px-2 py-1 rounded"
+                          onClick={() => handleDeleteRow(index)}
+                        >
+                          Delete
+                        </button>
+                      </td>
+                    </tr>
+                  ))}
+                  {/* Total Row */}
+                  <tr>
+                      <td className="border p-2" colSpan={3}></td>
+                      <td className="border p-2">
+                      Total : {Data.tableData?.reduce((sum, row) => sum + (Number(row.debit) || 0), 0)}
+                      </td>
+                      <td className="border p-2">
+                      Total : {Data.tableData?.reduce((sum, row) => sum + (Number(row.credit) || 0), 0)}
+                      </td>
+                      <td className="border p-2" colSpan={2}></td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <button 
+                className="bg-blue-500 text-white font-bold px-4 py-2 rounded-lg hover:bg-blue-600"
+                onClick={() => {
+                  alert('Data saved successfully!');
+                }}
+              >
+                Save
+              </button>
+            </section>
 
             </div>
             

@@ -51,7 +51,7 @@ const App = () => {
       Title: "Accounting",
       Icon: MdAccountBalanceWallet ,
       Name: "accounting",
-      Link: "Accounting",
+      Link: "",
       Role: "",
       Children: [
         {
@@ -78,7 +78,7 @@ const App = () => {
       Title: "Production",
       Icon: HiShoppingCart,
       Name: "production",
-      Link: "Production",
+      Link: "",
       Role: "",
       Children: [
         {
@@ -130,7 +130,7 @@ const App = () => {
       Title: "HR",
       Icon: FaAddressCard,
       Name: "hr",
-      Link: "Hr",
+      Link: "",
       Role: "",
       Children: [
         {
@@ -211,7 +211,7 @@ const App = () => {
       Title: "Inventory",
       Icon: MdInventory2,
       Name: "inventory",
-      Link: "Inventory",
+      Link: "",
       Role: "",
       Children: [
         {
