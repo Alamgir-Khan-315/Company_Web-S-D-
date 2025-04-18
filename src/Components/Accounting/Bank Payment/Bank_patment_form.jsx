@@ -11,11 +11,34 @@ const Bank_patment_form = () => {
         amount: ""
     });
 
-    const [tableData, setTableData] = useState([{
-        code: "",
-        head: "",
-        amount: ""
-    }]);
+    // const [tableData, setTableData] = useState([{
+    //     code: "",
+    //     head: "",
+    //     amount: ""
+    // }]);
+
+    const [tableData, setTableData] = useState([
+        {
+            code: "001",
+            head: "Salary",
+            amount: "50000"
+        },
+        {
+            code: "002", 
+            head: "Rent",
+            amount: "25000"
+        },
+        {
+            code: "003",
+            head: "Utilities",
+            amount: "10000"
+        },
+        {
+            code: "",
+            head: "",
+            amount: ""
+        }
+    ]);
 
     function handleFormData(e) {
         const { name, value } = e.target;
@@ -26,21 +49,25 @@ const Bank_patment_form = () => {
        alert("Form data added")
     }
 
-    function handleTableInput(e, index) {
-        const { name, value } = e.target;
-        const newTableData = [...tableData];
-        newTableData[index] = {
-            ...newTableData[index],
-            [name]: value
-        };
+        function handleTableInput(e, index) {
+            const { name, value } = e.target;
+            const newTableData = [...tableData];
+            newTableData[index] = {
+                ...newTableData[index],
+                [name]: value
+            };
+            
+            if (index === tableData.length - 1) {
+                newTableData.push({
+                    code: "",
+                    head: "",
+                    amount: ""
+            });
+        }
+        
         setTableData(newTableData);
     }
 
-  //   setTableData([...tableData, {
-  //     code: "",
-  //     head: "",
-  //     amount: ""
-  // }]);
 
     function handleDeleteRow(index) {
         const newTableData = tableData.filter((_, i) => i !== index);
