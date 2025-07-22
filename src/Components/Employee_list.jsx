@@ -148,7 +148,7 @@ const Employee_list = () => {
       name: "Status",
       width: "80px",
       selector: (row) => row.status,
-      cell: (row) => <span className={`px-2 py-1 rounded text-white ${row.status === "Active" ? "bg-green-500" : "bg-red-500"}`}>{row.status}</span>,
+      cell: (row) => <span className={`px-2 py-1 rounded text-white cursor-pointer ${row.status === "Active" ? "bg-green-500" : "bg-red-500"}`}>{row.status}</span>,
     },
     {
       name: "Action",
@@ -203,7 +203,7 @@ const Employee_list = () => {
   }
 
   return (
-    <div className="main h-[100vh] pt-[3pc]">
+    <div className="main pt-[3pc]">
       <div className="box">
         <div className="top-btn-section h-20 border-b border-gray-200">
           <div className="top-button flex float-end p-4 gap-5">
