@@ -7,6 +7,7 @@ import Loan_form from "./Components/HR/Loan Form/home";
 
 import Bank_payment from './Components/Accounting/Bank Payment/Bank_patment_form'
 import COA_form from './Components/Accounting/COA_Form/COA_Form'
+import Factory_edit from './Components/Accounting/Factory_Edit/home'
 
 import Generate_salary from "./Components/HR/Generate salary/home";
 
@@ -65,6 +66,12 @@ const App = () => {
           Icon: IoMdPersonAdd,
           Name: "coa_form",
           Link: "Accounting/COA_form",
+        },
+        {
+          Title: "Factory edit",
+          Icon: IoMdPersonAdd,
+          Name: "factory_edit",
+          Link: "Accounting/Factory_edit",
         },
         {
           Title: "Report",
@@ -427,6 +434,7 @@ const App = () => {
               {/* nav */}
               <Route path="Accounting/COA_form" element={<COA_form/>}/>
               <Route path="Accounting/Bank_payment" element={<Bank_payment/>}/>
+              <Route path="Accounting/Factory_edit" element={<Factory_edit/>}/>
 
               <Route path="/" element={<Employee_list />} />
               <Route path="/Production" element={<Production />} />
